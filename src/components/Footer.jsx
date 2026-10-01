@@ -1,0 +1,5 @@
+import { Link } from "react-router-dom";
+import { BIZ, navItems } from "../data";
+export default function Footer() {
+  return <footer className="footer"><div className="container footer-top"><div><div className="footer-brand">GEETHARAJ<small>{BIZ.tagline}</small></div><p>Tyres, lubricants, batteries and practical automotive services in Hiriadka.</p></div><div><h4>Explore</h4>{navItems.slice(0,5).map(([x,p])=><Link key={p} to={p}>{x}</Link>)}</div><div><h4>Contact</h4><a href={`tel:${BIZ.phones[0]}`}>{BIZ.phones[0]}</a><a href={`tel:${BIZ.phones[1]}`}>{BIZ.phones[1]}</a><a href={BIZ.mapsUrl} target="_blank" rel="noreferrer">Get Directions</a></div></div><div className="container footer-bottom"><span>© 2026 Geetharaj Tyres & Lubricants</span><span>All Rights Reserved.</span></div></footer>;
+}
