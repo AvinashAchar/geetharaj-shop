@@ -2120,6 +2120,103 @@ h2 {
   }
 }
 
+
+
+
+/* Floating WhatsApp button */
+.floating-wa {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+
+  box-shadow:
+    0 0 0 5px rgba(37, 211, 102, 0.12),
+    0 0 22px rgba(37, 211, 102, 0.4);
+
+  animation: whatsappGlow 2.5s ease-in-out infinite;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.floating-wa-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.floating-wa-label {
+  position: absolute;
+  right: 70px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: #171a1e;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(8px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.floating-wa:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 0 28px rgba(37, 211, 102, 0.55);
+}
+
+.floating-wa:hover .floating-wa-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes whatsappGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.1),
+                0 0 16px rgba(37, 211, 102, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(37, 211, 102, 0.14),
+                0 0 25px rgba(37, 211, 102, 0.48);
+  }
+}
+
+@media (max-width: 600px) {
+  .floating-wa {
+    right: 16px;
+    bottom: 18px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .floating-wa-label {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-wa {
+    animation: none;
+    transition: none;
+  }
+}
+  
 /* =========================================================
    REDUCED MOTION
 ========================================================= */
