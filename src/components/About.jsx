@@ -228,7 +228,7 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="owner-action whatsapp"
                 >
-                  - WhatsApp
+                  -                                                                 WhatsApp
                 </a>
 
               </div>

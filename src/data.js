@@ -123,13 +123,13 @@ export const brands = [
 export const ownerImage = "/gallery/owner.jpeg";
 
 export const gallery = [
-  "/gallery/shop.jpg",
-  "/gallery/hero-1.jpg",
-  "/gallery/hero-2.jpg",
-  "/gallery/service-tyre.jpg",
-  "/gallery/service-oil.jpg",
-  "/gallery/product-tyres.jpg",
-  "/gallery/product-oil.jpg",
-  "/gallery/product-battery.jpg"
+  "/gallery/gal0.jpg",
+  "/gallery/gal1.jpg",
+  "/gallery/gal2.jpg",
+  "/gallery/gal3.jpg",
+  "/gallery/gal4.jpg",
+  "/gallery/gal5.jpg",
+  "/gallery/gal6.jpg",
+  "/gallery/gal7.jpg"
 ];
 
