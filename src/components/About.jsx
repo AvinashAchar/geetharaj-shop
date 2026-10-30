@@ -84,7 +84,7 @@ export default function About() {
             {/* OWNER INFORMATION */}
             <div className="owner-modal-content">
 
-              <span className="eyebrow">
+              <span className="eyebrow"><br></br>
                 GEETHARAJ TYRES & LUBRICANTS
               </span>
 
