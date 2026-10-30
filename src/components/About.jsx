@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
@@ -7,40 +8,25 @@ export default function About() {
 
   return (
     <section className="section" id="about">
-
       <div className="container split">
 
-        {/* =========================
-            OWNER IMAGE
-        ========================== */}
+        {/* OWNER IMAGE */}
         <Reveal className="about-image-wrap">
-
           <button
             type="button"
             className="image-button"
             onClick={() => setOpen(true)}
           >
-
             <img
               src="/gallery/owner.jpeg"
-              alt="Geetharaj Tyres and Lubricants Owner"
+              alt="Sandesh Acharya - Geetharaj Tyres and Lubricants"
             />
-
             <span>VIEW PROFILE ↗</span>
-
           </button>
-
         </Reveal>
 
-
-        {/* =========================
-            ABOUT CONTENT
-        ========================== */}
-        <Reveal
-          className="about-copy"
-          delay={100}
-        >
-
+        {/* ABOUT CONTENT */}
+        <Reveal className="about-copy" delay={100}>
           <SectionHeading
             eyebrow="ABOUT THE SHOP"
             title="Automotive care, kept simple."
@@ -59,168 +45,106 @@ export default function About() {
             every customer.
           </p>
 
-          <a
-            className="text-link"
-            href="/contact"
-          >
+          <a className="text-link" href="/contact">
             Get in touch →
           </a>
-
         </Reveal>
-
       </div>
 
-
-      {/* ==================================================
-          OWNER PROFILE MODAL
-      =================================================== */}
-
+      {/* OWNER PROFILE MODAL */}
       {open && (
-
         <div
           className="modal-backdrop"
           onClick={() => setOpen(false)}
         >
-
           <div
             className="owner-modal"
             onClick={(event) => event.stopPropagation()}
           >
 
             {/* CLOSE BUTTON */}
-
             <button
               type="button"
               className="modal-close"
               onClick={() => setOpen(false)}
-              aria-label="Close"
+              aria-label="Close profile"
             >
               ×
             </button>
 
-
-            {/* =========================
-                OWNER IMAGE
-            ========================== */}
-
+            {/* OWNER PHOTO */}
             <div className="owner-modal-image">
-
               <img
                 src="/gallery/owner.jpeg"
-                alt="Geetharaj Tyres and Lubricants Owner"
+                alt="Sandesh Acharya"
               />
-
+              
             </div>
 
-
-            {/* =========================
-                OWNER INFORMATION
-            ========================== */}
-
+            {/* OWNER INFORMATION */}
             <div className="owner-modal-content">
 
               <span className="eyebrow">
                 GEETHARAJ TYRES & LUBRICANTS
               </span>
 
+              <h3>Sandesh Acharya</h3>
 
-              <h3>
+              <p className="owner-role">
                 Owner & Management
-              </h3>
-
-
-              <p className="owner-description">
-                Geetharaj Tyres & Lubricants serves customers
-                in Hiriadka with tyres, lubricants, batteries
-                and essential vehicle-care services under one roof.
               </p>
 
-
-              {/* =========================
-                  SERVICES
-              ========================== */}
-
-              <div className="owner-services">
-
-                <span>Tyre Fitting, </span>
-
-                <span>Oil Change, </span>
-
-                <span>Battery Fitting, </span>
-
-                <span>Seat Cover, </span>
-
-                <span>Tank Cover, </span>
-
-                <span>Tyre Care.</span>
-
-              </div>
-
-
-              {/* =========================
-                  PHONE NUMBERS
-              ========================== */}
-
-              <div className="owner-contact">
-
-                <a href="tel:9972868103">
-
-                  <small>PHONE: </small>
-
-                  <strong>
-                    9972868103, 
-                  </strong>
-
-                </a>
-
-
-                <a href="tel:9611455165">
-
-                  <small> PHONE: </small>
-
-                  <strong>
-                    9611455165
-                  </strong>
-
-                </a>
-
-              </div>
-
-
-              {/* =========================
-                  SHOP LOCATION
-              ========================== */}
-
-              <div className="owner-location">
-
-                <span>
-                  SHOP LOCATION
-                </span>
-
+              <div className="owner-description">
                 <p>
-                  Rajarajeshwari Complex
-                  <br />
-                  Opposite Oasis Hall
-                  <br />
-                  Hiriadka
+                  Welcome to Geetharaj Tyres & Lubricants.
+                  We provide quality tyres, lubricants,
+                  batteries and essential vehicle-care
+                  services in Hiriadka.
                 </p>
 
+                <p>
+                  From tyre fitting and oil changes to
+                  battery fitting, seat covers and tank
+                  covers, we bring your everyday automotive
+                  needs under one roof.
+                </p>
               </div>
 
+              {/* SERVICES */}
+              <div className="owner-services">
+                <span>OUR SERVICES</span>
+                <p>
+                  Tyre Fitting <i>•</i> Oil Change <i>•</i>
+                  Battery Fitting <i>•</i> Seat Covers
+                  <i> • </i> Tank Covers <i>•</i> Tyre Care
+                </p>
+              </div>
 
-              {/* =========================
-                  ACTION BUTTONS
-              ========================== */}
+              {/* CONTACT DETAILS */}
+              <div className="owner-details">
 
+                <div>
+                  <span>PHONE</span>
+                  <a href="tel:9972868103">+91 99728 68103</a>
+                  <a href="tel:9611455165">+91 96114 55165</a>
+                </div>
+
+                <div>
+                  <span>SHOP LOCATION</span>
+                  <p>Rajarajeshwari Complex</p>
+                  <p>Opposite Oasis Hall, Hiriadka</p>
+                </div>
+
+              </div>
+
+              {/* ACTION BUTTONS */}
               <div className="owner-actions">
-
                 <a
                   href="tel:9972868103"
                   className="owner-action primary"
                 >
-                  Call Now - 
+                  Call Now ↗
                 </a>
-
 
                 <a
                   href="https://wa.me/919972868103"
@@ -228,19 +152,14 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="owner-action whatsapp"
                 >
-                  -                                                                 WhatsApp
+                  WhatsApp ↗
                 </a>
-
               </div>
 
             </div>
-
           </div>
-
         </div>
-
       )}
-
     </section>
   );
 }

@@ -10,7 +10,9 @@ export default function Gallery() {
     if (!active) return;
 
     const handleKeyDown = (event) => {
-      if (event.key === "Escape") setActive(null);
+      if (event.key === "Escape") {
+        setActive(null);
+      }
     };
 
     document.addEventListener("keydown", handleKeyDown);
@@ -25,6 +27,7 @@ export default function Gallery() {
   return (
     <section className="section gallery-section" id="gallery">
       <div className="container gallery-container">
+
         <div className="section-heading gallery-heading">
           <span className="eyebrow">INSIDE GEETHARAJ</span>
           <h2>Our Shop in Pictures</h2>
@@ -36,7 +39,10 @@ export default function Gallery() {
 
         <div className="gallery-grid">
           {gallery.map((src, index) => (
-            <Reveal key={`${src}-${index}`} delay={Math.min(index * 40, 200)}>
+            <Reveal
+              key={`${src}-${index}`}
+              delay={Math.min(index * 40, 200)}
+            >
               <button
                 type="button"
                 className="gallery-item"
@@ -45,12 +51,13 @@ export default function Gallery() {
               >
                 <img
                   src={src}
-                  alt={`Geetharaj Tyres and Lubricants - photo ${index + 1}`}
+                  alt={`Geetharaj gallery photo ${index + 1}`}
                   loading="lazy"
                   onError={(event) => {
                     event.currentTarget.style.visibility = "hidden";
                   }}
                 />
+
                 <span className="gallery-zoom" aria-hidden="true">
                   ↗
                 </span>
@@ -66,6 +73,7 @@ export default function Gallery() {
         )}
       </div>
 
+      {/* IMAGE LIGHTBOX */}
       {active && (
         <div
           className="gallery-lightbox"
